@@ -1,0 +1,26 @@
+/* V8: card gradient sampled from Ahmad's approved blue reference. */
+:root{--card-wash:radial-gradient(ellipse at 25% 40%,#003b96,transparent 72%),linear-gradient(120deg,#002772,#002058);--card-edge:#086bc044}
+.service-stage,.product-card,.stat,.stat:first-child,.stat:last-child{background:var(--card-wash);border-color:var(--card-edge)}
+.service-artboard{background:transparent}
+.service-copy h3{color:#ffb31b}
+.service-copy p:not(.eyebrow),.service-copy .tags span{color:#b5d3f8}
+.stage-wordmark{color:#1257ad66}
+.stat:before{background:none}
+.product-card-image{background:transparent}
+
+/* Equal full-image frames and equal title rows at every breakpoint. */
+.sector-grid{align-items:stretch}
+.industry-card{height:100%;align-self:stretch;background:var(--card-wash)}
+.industry-picture{aspect-ratio:1361 / 1984}
+.industry-card strong{flex:1;min-height:4.65em;display:flex;align-items:center;background:transparent}
+
+/* User-selected Sorani font, with the full original shaping tables. */
+@font-face{font-family:'Rabar Sorani';src:url('assets/rabar-013.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+html[lang=ckb]{--font:'Rabar Sorani',Arial,sans-serif;font-synthesis:none}
+html[lang=ckb] body{font-feature-settings:'rlig' 1,'calt' 1,'liga' 1,'kern' 1}
+html[lang=ckb] :is(h1,h2,h3,p,em,strong,span,a,button,input,textarea,select,label,address){letter-spacing:normal}
+html[lang=ckb] :is(h1,h2,h3){line-height:1.45}
+html[lang=ckb] :is(.product-card-info small,.rail-footer,.film-play small,.model-toolbar>span,.location-links,.sector-controls>span,.coverage-caption){font-family:var(--font);letter-spacing:normal}
+html[lang=ckb] .hero h1{font-family:var(--font);font-size:clamp(46px,5.55vw,87px);line-height:1.4;letter-spacing:normal}
+.language-menu [lang=ckb],#language-label:lang(ckb),[data-video=ku]{font-family:'Rabar Sorani',Arial,sans-serif;font-synthesis:none;letter-spacing:normal}
+@media(max-width:760px){html[lang=ckb] .hero h1{font-size:clamp(33px,7.3vw,52px);line-height:1.45}.industry-card strong{min-height:4.65em}}

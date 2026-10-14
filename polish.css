@@ -1,0 +1,110 @@
+/* Reference: the approved navy/cobalt wash in the contact section. */
+:root{--site-base:#101d35;--site-wash:radial-gradient(ellipse at 90% 30%,#0011e242,transparent 60%),linear-gradient(135deg,#101d35,#0b1528)}
+body{background:var(--site-base);isolation:isolate}
+body:before{position:fixed;inset:0;z-index:-1;background:var(--site-wash);pointer-events:none}
+.about,.service-story,.products,.film,.industries,.smart,.quality,.coverage,.journey,.contact,footer{background:transparent}
+.contact-lines{opacity:.35}
+.vision-belt{background:transparent;border:0;box-shadow:none}
+.vision-beam{opacity:.22}
+.headline-line{display:block;transform-origin:50% 100%;animation:headlineArrive 1.1s cubic-bezier(.2,.75,.2,1) both;animation-delay:calc(var(--line-index)*.16s)}
+.headline-line em{display:inline}
+.hero h1{perspective:900px}
+.hero-description.is-switching{animation:descriptionArrive .85s .2s both}
+.motion-control{padding:8px 13px;border:1px solid #ffffff30;border-radius:30px;background:#12243c88;font-size:10px}
+.motion-control[aria-pressed=true]{border-color:#d9a86d88;color:#f1c68f;background:#101d35c9}
+
+/* Three independent stages, each with an evident pulse and traveling progress. */
+.vision-belt{padding-block:44px 35px}
+.vision-flow{gap:24px}
+.vision-word{--cue-delay:0s;padding:14px 0 23px}
+.vision-word:nth-of-type(2){--cue-delay:-6s}
+.vision-word:nth-of-type(3){--cue-delay:-3s}
+.vision-word strong{animation:visionSequence 9s ease-in-out infinite;animation-delay:var(--cue-delay);font-size:clamp(26px,3.2vw,49px);color:#eef4ff;opacity:.83}
+.vision-word:nth-of-type(2) strong,.vision-word:nth-of-type(3) strong{animation-delay:var(--cue-delay)}
+.vision-word:nth-of-type(3) strong{color:#f0c58e}
+.vision-word>span{font-size:11px;color:#88bad8;animation:visionNumber 9s ease-in-out infinite;animation-delay:var(--cue-delay)}
+.vision-word:after{content:'';position:absolute;height:2px;left:15%;right:15%;bottom:5px;transform-origin:left;background:linear-gradient(90deg,#00aeef,#d9a86d);box-shadow:0 0 18px #00aeef77;animation:visionUnderline 9s ease-in-out infinite;animation-delay:var(--cue-delay)}
+html[dir=rtl] .vision-word:after{transform-origin:right}
+.vision-connector{stroke:#67c8ef;stroke-width:1.6;stroke-dasharray:5 6;animation:visionPath 2.2s linear infinite}
+.vision-families{border-color:#89a8d422;font-size:11px;padding-top:24px;gap:14px 27px}
+
+/* The fixed bilingual slogan has living light across filled glyphs. */
+.slogan-strip{overflow:visible;background:transparent;border:0;border-radius:0;padding:62px 25px 66px;gap:28px;isolation:isolate}
+.slogan-strip:before,.slogan-strip:after{content:'';position:absolute;left:12%;right:12%;height:1px;background:linear-gradient(90deg,transparent,#00aeef66,#d9a86d70,transparent)}
+.slogan-strip:before{top:10px}.slogan-strip:after{bottom:10px}
+.slogan-bilingual{gap:16px;position:relative}
+.slogan-strip .slogan-bilingual p[lang=ar]{font-size:clamp(30px,4.4vw,67px);background:linear-gradient(105deg,#eef3ff 20%,#eef3ff 38%,#85dfff 48%,#fff 53%,#eef3ff 65%);background-size:260% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:sloganGlyphLight 7s ease-in-out infinite!important;filter:none;transform:none;opacity:1}
+.slogan-strip .slogan-bilingual p[lang=en]{font-size:clamp(26px,3.15vw,48px);background:linear-gradient(105deg,#d9a86d 20%,#d9a86d 37%,#fff0d2 48%,#f2cb8d 57%,#d9a86d 68%);background-size:260% 100%;background-clip:text;-webkit-background-clip:text;color:transparent;animation:sloganGlyphLight 7s ease-in-out -2s infinite!important;filter:none;transform:none;opacity:1}
+.slogan-star{display:grid;place-items:center;flex-shrink:0;width:54px;height:54px;animation:sloganSparkTurn 12s ease-in-out infinite!important;align-self:center}
+.slogan-star svg{width:100%;height:100%;filter:drop-shadow(0 0 13px #d9a86d45)}
+.slogan-light{top:12px;bottom:12px;width:30%;background:linear-gradient(90deg,transparent,#00aeef16,transparent);animation:phraseSheen 8s ease-in-out infinite;filter:blur(15px);z-index:-1}
+
+/* The full photograph defines its own frame; the title no longer covers it. */
+.industry-card{aspect-ratio:auto;height:auto;align-self:start;display:flex;flex-direction:column;overflow:hidden;background:#15274280;border-color:#6093c544}
+.industry-picture{position:relative;width:100%;aspect-ratio:var(--image-ratio);flex:0 0 auto;overflow:hidden;border-radius:inherit;border-bottom-left-radius:0;border-bottom-right-radius:0}
+.industry-card .industry-picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;transform:none!important;opacity:1;max-height:none}
+.industry-card:after{display:none}
+.industry-card strong{position:static;inset:auto;display:block;width:100%;padding:17px 38px 18px 17px;line-height:1.55;font-size:clamp(19px,1.65vw,26px);letter-spacing:-.025em;text-shadow:none;color:#f5f7fb;background:linear-gradient(110deg,#13274080,#10213c60)}
+html[dir=rtl] .industry-card strong{padding-inline-start:17px;padding-inline-end:38px}
+.industry-card .industry-arrow{bottom:21px;font-size:22px}
+.industry-card:before{z-index:3;animation:industrySheen 11s ease-in-out infinite;animation-delay:calc(var(--industry-index)*-.9s)}
+.sector-grid{align-items:start}
+
+.step-number{display:block;width:auto;background:transparent!important;padding:0!important;border:0!important;font:700 clamp(36px,4vw,60px)/1.1 Manrope;letter-spacing:-.06em;color:#e6b77e;margin-bottom:13px}
+.journey-grid:before{display:none}
+.journey-step .step-icon{margin-top:22px}
+
+/* The darker baked video pixels blend into the actual page rather than a box. */
+.coverage-visual{isolation:auto}
+.js .coverage-visual.reveal.is-visible{transform:none}
+.coverage-cinema{isolation:auto;filter:none;background:transparent;border:0;border-radius:0;overflow:visible}
+.coverage-cinema video{mix-blend-mode:lighten;isolation:auto;background:transparent;border:0;border-radius:0;box-shadow:none;filter:none;mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 4%,#000 96%,transparent)}
+
+/* SVG joints move individually. The carton follows the arm that supports it. */
+.system-orbit{min-height:600px;isolation:isolate}
+.smart-core.robot-stage{inset:0;animation:none;display:grid;place-items:center;overflow:visible}
+.packaging-robot{display:block;width:100%;height:100%;max-width:600px;max-height:650px;overflow:visible}
+.packaging-robot .robot-head,.packaging-robot .robot-arm-left,.packaging-robot .robot-arm-right,.packaging-robot .robot-box,.packaging-robot .robot-eyes{transform-box:view-box}
+.robot-head{transform-origin:298px 249px;animation:robotLook 6.4s ease-in-out infinite}
+.robot-arm-left{transform-origin:205px 296px;animation:robotWelcome 7s ease-in-out infinite}
+.robot-arm-right,.robot-box{transform-origin:394px 296px;animation:robotPresent 6.8s ease-in-out infinite}
+.robot-eyes{transform-origin:298px 182px;animation:robotBlink 5.5s linear infinite}
+.robot-scan{animation:robotScan 3.6s ease-in-out infinite}
+.robot-body{animation:none}
+.system-ring.ring-a{opacity:.5}.system-ring.ring-b{opacity:.35}
+.system-orbit:before{inset:25% 15% 10%;background:radial-gradient(ellipse,#00aeef20,transparent 65%);filter:blur(25px)}
+.logo-sap{top:12%;left:0;width:100px}.logo-efi{top:35%;right:0;width:90px}.logo-trojan{bottom:6%;right:0;width:102px;height:130px}
+.system-connections{opacity:.4}
+
+@keyframes heroLightTravel{0%{transform:translate3d(-14%,-8%,0) scale(.85);opacity:.6}50%{transform:translate3d(20%,8%,0) scale(1.1);opacity:1}100%{transform:translate3d(35%,-9%,0) scale(.95);opacity:.7}}
+@keyframes heroBeamTravel{0%,10%{transform:translateX(-45%);opacity:0}35%,65%{opacity:.8}90%,100%{transform:translateX(45%);opacity:0}}
+@keyframes headlineArrive{from{opacity:0;transform:translateY(30px) rotateX(14deg);filter:blur(7px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:translateY(0) rotateX(0);filter:blur(0);clip-path:inset(0 0 -10% 0)}}
+@keyframes descriptionArrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes visionSequence{0%,5%,30%,100%{transform:translateY(0) scale(1);opacity:.72;filter:drop-shadow(0 0 0 transparent)}10%,22%{transform:translateY(-8px) scale(1.06);opacity:1;filter:drop-shadow(0 0 22px #00aeef55)}}
+@keyframes visionNumber{0%,30%,100%{color:#7d9dbb}10%,22%{color:#efc994}}
+@keyframes visionUnderline{0%{transform:scaleX(0);opacity:0}8%{opacity:1}25%{transform:scaleX(1);opacity:1}32%,100%{transform:scaleX(1);opacity:0}}
+@keyframes sloganGlyphLight{0%,12%{background-position:100% 50%}78%,100%{background-position:0 50%}}
+@keyframes sloganSparkTurn{0%,20%{transform:rotate(0) scale(1)}50%{transform:rotate(90deg) scale(1.12)}80%,100%{transform:rotate(180deg) scale(1)}}
+@keyframes robotLook{0%,100%{transform:rotate(-3deg) translateY(0)}45%,60%{transform:rotate(4deg) translateY(-3px)}}
+@keyframes robotWelcome{0%,100%{transform:rotate(0)}35%,65%{transform:rotate(10deg)}}
+@keyframes robotPresent{0%,100%{transform:rotate(0)}40%,60%{transform:rotate(-2deg)}}
+@keyframes robotBlink{0%,43%,48%,100%{transform:scaleY(1)}45%,46%{transform:scaleY(.12)}}
+@keyframes robotScan{0%,100%{transform:translateY(-15px);opacity:.25}50%{transform:translateY(20px);opacity:.85}}
+
+@media(max-width:1000px){.system-orbit{min-height:520px}.logo-sap{width:85px}.logo-efi{width:75px}.logo-trojan{width:85px;height:115px}.industry-card strong{font-size:20px}}
+@media(max-width:760px){
+ .headline-line{animation-duration:.9s}.motion-control{padding:6px 9px;font-size:8px}
+ .vision-belt{padding-block:28px}.vision-flow{gap:8px}.vision-word{padding-top:9px}.vision-word strong{font-size:clamp(17px,4.4vw,27px)}.vision-word>span{font-size:9px}.vision-families{font-size:9px;padding-top:17px;gap:10px 15px}
+ .slogan-strip{padding:42px 9px 45px;gap:12px}.slogan-star{width:30px;height:30px}.slogan-strip .slogan-bilingual p[lang=ar]{font-size:clamp(23px,5.7vw,37px);line-height:1.6}.slogan-strip .slogan-bilingual p[lang=en]{font-size:clamp(19px,4.8vw,30px)}.slogan-bilingual{gap:12px}
+ .industry-card strong{font-size:clamp(15px,3.75vw,21px);padding:13px 28px 14px 11px}.industry-card .industry-arrow{bottom:17px;font-size:18px}
+ .step-number{font-size:42px;margin-bottom:12px}.journey-step .step-icon{margin-top:18px}
+ .system-orbit{min-height:0;height:auto;aspect-ratio:600/650;max-width:520px}.packaging-robot{width:100%;height:100%}.logo-sap{top:14%;left:0;width:74px;height:55px}.logo-efi{right:0;top:35%;width:62px;height:50px}.logo-trojan{bottom:7%;right:0;width:78px;height:100px}.orbit-coordinate{bottom:-12px}
+}
+@media(max-width:380px){.slogan-star{width:24px;height:24px}.slogan-strip{gap:9px;padding-inline:3px}.slogan-strip .slogan-bilingual p[lang=ar]{font-size:21px}.slogan-strip .slogan-bilingual p[lang=en]{font-size:18px}.industry-card strong{font-size:14px}.step-number{font-size:38px}.logo-sap{width:60px}.logo-efi{width:55px}.logo-trojan{width:66px;height:85px}}
+.motion-paused .headline-line{animation:none!important;opacity:1;filter:none;transform:none;clip-path:none}
+.motion-paused .hero-description.is-switching{animation:none!important;opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+ .headline-line,.hero-description.is-switching{animation:none!important;opacity:1;filter:none;transform:none;clip-path:none}
+ .hero-aurora i,.hero-aurora:after,.vision-word strong,.vision-word>span,.vision-word:after,.vision-connector,.slogan-strip .slogan-bilingual p,.slogan-star,.robot-head,.robot-arm-left,.robot-arm-right,.robot-box,.robot-eyes,.robot-scan{animation:none!important}
+ .vision-word strong{opacity:1;transform:none;filter:none}.vision-word:after{transform:scaleX(1);opacity:.5}.robot-scan{opacity:.6;transform:none}
+}

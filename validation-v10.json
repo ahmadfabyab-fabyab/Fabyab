@@ -1,0 +1,57 @@
+{
+  "result": "PASS",
+  "languages": 4,
+  "heroScenes": 5,
+  "packagingFamilies": 4,
+  "products": 43,
+  "industriesVisible": 11,
+  "customerGroupsVisible": 8,
+  "filmLanguages": 4,
+  "locationsWithMaps": 3,
+  "checks": [
+    "English-first boot despite prior language and lang query",
+    "transparent vector map, routing and pause controls",
+    "two product replacements and supplied social links",
+    "factory image, new stage atmosphere, four family states and independent pause",
+    "factory parallax stops on motion pause",
+    "requested section and navigation order in four languages",
+    "unified industry frames",
+    "application boot and all translations",
+    "official logo consistency",
+    "bilingual fixed slogan",
+    "43 product selections and detail dialogs",
+    "three distinct models per family",
+    "industry and client dialogs",
+    "all customer groups and filters",
+    "EN first film with four actual embeds",
+    "menu, Escape and English-first reload",
+    "motion pause and coverage media control",
+    "enquiry prefill and encoded mailto",
+    "local assets, font files and responsive CSS"
+  ],
+  "browserVisualQA": "not available; no browser or real-device playback verification",
+  "motion": {
+    "result": "PASS",
+    "reentryViewportWidths": [
+      360,
+      768,
+      1440
+    ],
+    "repeatedReveals": true,
+    "repeatedCounters": true,
+    "mapAndModelTimersResume": true,
+    "manualPauseRespected": true,
+    "browserVisualQA": false
+  },
+  "font": {
+    "font": "Rabar_013",
+    "actualSoraniStringsShaped": 337,
+    "missingSoraniGlyphs": 0,
+    "shapingTablesAndOutlinesPreserved": true,
+    "browserVisualQA": false
+  },
+  "reducedMotion": "PASS",
+  "cssFilesParsed": 7,
+  "images": "Full source dimensions and alpha retained; new WebP assets opened successfully",
+  "map": "841 boundary vertices, 21 routes and 22 cities retained; vector without backdrop; static preview alpha verified at corners"
+}

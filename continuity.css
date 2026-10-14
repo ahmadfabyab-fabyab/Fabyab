@@ -1,0 +1,26 @@
+/* V10: compact controls, repeatable motion and a truly transparent map. */
+.language-menu{grid-template-columns:1fr;direction:ltr;min-width:190px}
+.language-menu button{text-align:left;width:100%;white-space:nowrap}
+.footer-brand{width:min(340px,36%)}
+.footer-brand img{width:100%;height:auto}
+.footer-socials{display:flex;align-items:center;gap:13px;flex-wrap:wrap;padding-bottom:30px;margin-top:-12px}
+.footer-socials>span{font-size:12px;color:#b8c7dc;margin-inline-end:7px}
+.footer-social-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:10px 16px;min-height:46px;border:1px solid #6bcfff44;border-radius:30px;background:linear-gradient(120deg,#142f52,#0a1b39);font:700 12px Manrope,Arial,sans-serif;transition:transform .25s,border-color .25s,background .25s}
+.footer-social-link svg{width:20px;height:20px;flex:none}
+.footer-social-link:hover{transform:translateY(-2px);border-color:#72dbff;background:#103869}
+.service-tab{min-height:76px;padding:16px 18px;gap:12px;border-radius:15px}
+.service-tab>span:nth-child(2){font-size:clamp(17px,1.3vw,21px);line-height:1.6;min-width:0;overflow-wrap:break-word}
+.service-tab .tab-arrow{font-size:24px}
+.coverage-cinema{position:relative;aspect-ratio:4/3;background:transparent;isolation:auto;border:0;overflow:visible}
+.coverage-brand{position:absolute;left:7.778%;top:8.704%;width:21.875%;height:auto;z-index:1;pointer-events:none}
+.coverage-map{width:100%;height:auto;display:block;background:none;isolation:auto;mix-blend-mode:normal;mask:none;filter:none;overflow:visible}
+.coverage-map .map-packet{animation:coveragePacket 8s linear infinite;animation-delay:var(--packet-delay,0s)}
+.coverage-map .map-node-pulse{transform-box:view-box;animation:coveragePulse 4s ease-out infinite;animation-delay:var(--node-delay,0s)}
+.coverage-map.is-paused .map-packet,.coverage-map.is-paused .map-node-pulse,.motion-paused .coverage-map .map-packet,.motion-paused .coverage-map .map-node-pulse{animation-play-state:paused!important}
+.js .coverage-visual.reveal{transform:none!important}
+@keyframes coveragePacket{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+@keyframes coveragePulse{0%{transform:scale(1);opacity:.6}90%,100%{transform:scale(2.25);opacity:0}}
+@media(max-width:1000px){.service-tab>span:nth-child(2){font-size:17px}.service-tab{padding:15px 13px}}
+@media(max-width:760px){.footer-brand{width:min(240px,64%)}.footer-socials{padding-bottom:25px;margin-top:0;gap:10px}.footer-socials>span{font-size:11px}.footer-social-link{padding:10px 13px;font-size:11px}.service-tab{min-height:70px;padding:13px 10px;gap:7px}.service-tab>span:nth-child(2){font-size:15px;line-height:1.65}.service-tab .tab-arrow{font-size:20px}.service-tab>span:first-child{font-size:9px}.language-menu{min-width:185px}}
+@media(max-width:380px){.service-tab{padding:12px 9px;min-height:68px}.service-tab>span:nth-child(2){font-size:14px}.service-tab .tab-arrow{display:none}}
+@media(prefers-reduced-motion:reduce){.coverage-map .map-packet,.coverage-map .map-node-pulse{animation:none!important}.coverage-map .map-node-pulse{opacity:.4;transform:none}.footer-social-link:hover{transform:none}}

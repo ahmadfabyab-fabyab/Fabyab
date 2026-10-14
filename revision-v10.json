@@ -1,0 +1,28 @@
+{
+  "version": 10,
+  "date": "2026-10-14",
+  "changes": [
+    "Replace partitioned and shipping cartons with supplied dairy tray and burger meal box in every product view",
+    "Transparent vector map replaces on-page MP4; MP4 remains downloadable",
+    "Languages stacked and left aligned: EN/TR/AR/CKB; all new loads start EN including old saved choices and lang query",
+    "Reveal and counters repeat upon re-entry; hero/model/map resume after leaving or changing tabs",
+    "Remove pointer-hover stop from product groups; preserve explicit pause and keyboard focus safeguards",
+    "Smaller footer logo and family buttons",
+    "Facebook and Instagram links in footer using user-supplied destinations"
+  ],
+  "replacedProducts": [
+    "corrugated-dividers",
+    "corrugated-shipping"
+  ],
+  "newProducts": [
+    "corrugated-dairy-tray",
+    "corrugated-burger-meal"
+  ],
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/share/1EhnUVd88G/?mibextid=wwXIfr",
+    "instagram": "https://www.instagram.com/fabyab.co/"
+  },
+  "socialProvenance": "Supplied by user in this conversation",
+  "browserVisualQA": false,
+  "mobileVerification": "Logic exercised at 360/768/1440 widths in DOM; no real browser layout or touch compositing verification."
+}
