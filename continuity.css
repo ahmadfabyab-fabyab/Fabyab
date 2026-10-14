@@ -24,3 +24,35 @@
 @media(max-width:760px){.footer-brand{width:min(240px,64%)}.footer-socials{padding-bottom:25px;margin-top:0;gap:10px}.footer-socials>span{font-size:11px}.footer-social-link{padding:10px 13px;font-size:11px}.service-tab{min-height:70px;padding:13px 10px;gap:7px}.service-tab>span:nth-child(2){font-size:15px;line-height:1.65}.service-tab .tab-arrow{font-size:20px}.service-tab>span:first-child{font-size:9px}.language-menu{min-width:185px}}
 @media(max-width:380px){.service-tab{padding:12px 9px;min-height:68px}.service-tab>span:nth-child(2){font-size:14px}.service-tab .tab-arrow{display:none}}
 @media(prefers-reduced-motion:reduce){.coverage-map .map-packet,.coverage-map .map-node-pulse{animation:none!important}.coverage-map .map-node-pulse{opacity:.4;transform:none}.footer-social-link:hover{transform:none}}
+.service-stage {
+  background:
+    radial-gradient(
+      ellipse at 65% 55%,
+      #0a3278,
+      transparent 66%
+    ),
+    linear-gradient(
+      135deg,
+      #0d1032,
+      #000b66 52%,
+      #0d1032
+    );
+}.stage-atmosphere:after {
+  background: linear-gradient(
+    116deg,
+    transparent 43%,
+    #000b6606 50%,
+    transparent 57%
+  );
+}
+.service-tab:before {
+  background: radial-gradient(
+    ellipse at 0 0,
+    #00aeef60,
+    transparent 80%
+  );
+}.service-tab {
+  background: linear-gradient(135deg, #000b66, #081d42);
+}.location-card {
+  background: linear-gradient(145deg, #000b65, #0a1428);
+}

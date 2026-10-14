@@ -1,5 +1,5 @@
 /* Reference: the approved navy/cobalt wash in the contact section. */
-:root{--site-base:#101d35;--site-wash:radial-gradient(ellipse at 90% 30%,#0011e242,transparent 60%),linear-gradient(135deg,#101d35,#0b1528)}
+:root{--site-base:#0d1032;--site-wash:radial-gradient(ellipse at 90% 30%,#0011e242,transparent 60%),linear-gradient(135deg,#0d1032,#0b1528)}
 body{background:var(--site-base);isolation:isolate}
 body:before{position:fixed;inset:0;z-index:-1;background:var(--site-wash);pointer-events:none}
 .about,.service-story,.products,.film,.industries,.smart,.quality,.coverage,.journey,.contact,footer{background:transparent}

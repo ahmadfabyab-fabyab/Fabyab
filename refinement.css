@@ -1,8 +1,6 @@
 /* 14 October 2026: four languages, changing product groups and brighter brand light. */
-@font-face{font-family:'Noto Sorani';src:url('assets/noto-sorani-400.woff') format('woff');font-weight:400;font-display:swap}
-@font-face{font-family:'Noto Sorani';src:url('assets/noto-sorani-700.woff') format('woff');font-weight:700;font-display:swap}
 html[lang=tr]{--font:Manrope,Arial,sans-serif}
-html[lang=ckb]{--font:'Noto Sorani',Alexandria,Arial,sans-serif}
+html[lang=ckb]{--font:'Rabar Sorani',Arial,sans-serif}
 html[lang=tr] h1,html[lang=tr] h2,html[lang=tr] h3{line-height:1.15;letter-spacing:-.045em}
 html[lang=ckb] h1,html[lang=ckb] h2,html[lang=ckb] h3{line-height:1.65;letter-spacing:0}
 html[lang=ckb] .eyebrow{letter-spacing:0}
