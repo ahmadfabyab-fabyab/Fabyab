@@ -103,7 +103,7 @@ html[dir=rtl] .industry-card strong{padding-inline-start:17px;padding-inline-end
 @media(max-width:380px){.slogan-star{width:24px;height:24px}.slogan-strip{gap:9px;padding-inline:3px}.slogan-strip .slogan-bilingual p[lang=ar]{font-size:21px}.slogan-strip .slogan-bilingual p[lang=en]{font-size:18px}.industry-card strong{font-size:14px}.step-number{font-size:38px}.logo-sap{width:60px}.logo-efi{width:55px}.logo-trojan{width:66px;height:85px}}
 .motion-paused .headline-line{animation:none!important;opacity:1;filter:none;transform:none;clip-path:none}
 .motion-paused .hero-description.is-switching{animation:none!important;opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
+@media(prefers-reduced-motion:reduce) and (scripting:none){
  .headline-line,.hero-description.is-switching{animation:none!important;opacity:1;filter:none;transform:none;clip-path:none}
  .hero-aurora i,.hero-aurora:after,.vision-word strong,.vision-word>span,.vision-word:after,.vision-connector,.slogan-strip .slogan-bilingual p,.slogan-star,.robot-head,.robot-arm-left,.robot-arm-right,.robot-box,.robot-eyes,.robot-scan{animation:none!important}
  .vision-word strong{opacity:1;transform:none;filter:none}.vision-word:after{transform:scaleX(1);opacity:.5}.robot-scan{opacity:.6;transform:none}

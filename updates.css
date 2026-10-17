@@ -1,0 +1,68 @@
+/* October 16: focused changes over Ahmad's approved colours. */
+:root{--selected-green:linear-gradient(115deg,#00b853,#008b45);--selected-green-edge:#36ed67}
+/* Centre only the four metric cards. */
+.stats-grid .stat{text-align:center}
+.stats-grid .stat-mark{margin-inline:auto}
+.stats-grid .stat>span:not(.stat-mark){font-size:clamp(13px,1.05vw,16px);line-height:1.85}
+/* Selected packaging family and client category; inactive surfaces stay untouched. */
+.service-tab.active{background:var(--selected-green);border-color:var(--selected-green-edge);color:#fff;box-shadow:inset 0 1px #a0ffb633,0 8px 30px #008b4529}
+.service-tab.active:before{background:radial-gradient(ellipse at 0 0,#47df672b,transparent 80%)}
+.service-tab.active>span{color:#fff}
+.service-tab.active:after{background:linear-gradient(110deg,transparent 35%,#2bd86b1a 50%,transparent 65%)}
+.client-filter.active{background:var(--selected-green);border-color:var(--selected-green-edge);color:#fff;font-weight:700}
+/* Original hero composition with cleaner photographic colour and lighter tint. */
+.hero-image{filter:contrast(1.06) saturate(1.08) brightness(1.04)}
+.hero-shade{background:linear-gradient(90deg,#09182ed9,#0b1b339c 38%,#072f4526),linear-gradient(0deg,#0b1528,transparent 45%,#08162a40)}
+html[dir=rtl] .hero-shade{background:linear-gradient(270deg,#09182ed9,#0b1b339c 38%,#072f4526),linear-gradient(0deg,#0b1528,transparent 45%,#08162a40)}
+.hero-aurora{opacity:.45}
+.hero{touch-action:pan-y pinch-zoom}
+.hero-bottom .hero-controls{margin-inline-start:auto}
+/* One company card at its original desktop width, in one stable stage. */
+.client-wall{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.client-group{grid-column:1;grid-row:1}
+.client-sheet{aspect-ratio:2048/1488;display:flex;align-items:flex-start;justify-content:center}
+.client-sheet img{width:100%;height:auto;max-height:100%;object-fit:contain;object-position:top}
+.client-sheet img.is-switching{animation:clientCardArrive .65s cubic-bezier(.22,.61,.36,1) both}
+@keyframes clientCardArrive{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+/* Exactly the V11 strength illustration and its restrained pressure motion. */
+.quality-pressure-art{aspect-ratio:1;overflow:visible}
+.quality-pressure-svg{width:100%;height:auto;display:block;overflow:visible}
+.quality-pressure-svg .pressure-assembly{animation:pressureAssembly 6s ease-in-out infinite;transform-box:view-box;transform-origin:center}
+@keyframes pressureAssembly{0%,15%,100%{transform:translateY(-2px)}38%,64%{transform:translateY(2px)}72%{transform:translateY(1px)}}
+.quality-halo{animation:none}
+.pressure-pulse,.pressure-line{display:none}
+.motion-paused .pressure-assembly{animation-play-state:paused!important}
+/* Light enquiry card inspired by the supplied reference. */
+.quote-form{background:#fff;color:#0d1032;border:1px solid #e3e6ef;border-radius:22px;padding:36px;box-shadow:0 20px 55px #000b6629,0 4px 14px #00000015;backdrop-filter:none;transition:box-shadow .35s,border-color .35s}
+.quote-form:focus-within{border-color:#a7bfff;box-shadow:0 20px 55px #000b6638,0 0 0 3px #125cff0d}
+.quote-form .form-grid{gap:24px 20px}
+.quote-form .form-grid label{color:#656d80;font-size:14px;line-height:1.6;font-weight:700;gap:9px}
+.field-shell{display:block;position:relative;color:#171e40;min-width:0}
+.field-icon{position:absolute;inset-inline-start:14px;top:17px;width:21px;height:21px;pointer-events:none;z-index:1;transition:color .25s,transform .25s}
+.quote-form .form-grid :is(input,select,textarea){display:block;background:#fff;color:#171e40;border:1px solid #dce0e8;border-radius:10px;min-height:56px;padding:13px 14px;padding-inline-start:45px;font-size:16px;line-height:1.7;box-shadow:0 2px 3px #0d103209;transition:border-color .25s,box-shadow .25s,background .25s}
+.quote-form .form-grid :is(input,select,textarea):hover{border-color:#a4b3d2}
+.quote-form .form-grid :is(input,select,textarea):focus{outline:0;border-color:#155dfb;box-shadow:0 0 0 3px #155dfb1a;background:#fff}
+.quote-form .field-shell:focus-within .field-icon{color:#155dfb;transform:translateY(-1px)}
+.quote-form .form-grid textarea{min-height:140px;resize:vertical}
+.quote-form .form-grid option{background:#fff;color:#171e40}
+.quote-form .form-grid [dir=ltr]{text-align:left}
+html[dir=rtl] .quote-form .form-grid [dir=ltr]{padding-inline-start:14px;padding-inline-end:45px}
+.quote-form .form-submit{background:#155dfb;color:#fff;border:1px solid #155dfb;border-radius:10px;min-height:56px;font-size:14px;line-height:1.6;gap:15px;transition:background .25s,box-shadow .25s,transform .25s}
+.quote-form .form-submit:hover{background:#084ce0;box-shadow:0 7px 18px #155dfb33;transform:translateY(-2px)}
+.quote-form .form-submit:active{transform:translateY(0)}
+.quote-form .form-submit:before,.quote-form .form-submit:after{display:none}
+.quote-form .form-note{font-size:12px;line-height:1.8;color:#6d7486}
+.quote-form #form-status{font-size:13px;color:#1253ba;line-height:1.8}
+.quote-form #copy-request{color:#155dfb}
+.quote-form .request-preview{background:#f6f8fd;color:#171e40;border:1px solid #ced6e7;border-radius:10px}
+@media(max-width:1000px){.quote-form{padding:26px}.quote-form .form-grid{gap:22px 14px}}
+@media(max-width:760px){
+ .stats-grid .stat>span:not(.stat-mark){font-size:13px}
+ .client-wall{grid-template-columns:minmax(0,1fr)}
+ .hero-bottom{flex-wrap:wrap}.hero-bottom .hero-controls{margin-inline-start:0}
+ .quote-form{padding:25px 20px;border-radius:18px;width:100%;min-width:0}
+ .quote-form .form-grid{grid-template-columns:minmax(0,1fr);gap:20px}
+ .quote-form .form-grid label{font-size:14px}
+ .quote-form .form-submit{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce) and (scripting:none){.pressure-assembly,.client-sheet img.is-switching{animation:none!important}.quote-form .form-submit:hover{transform:none}}

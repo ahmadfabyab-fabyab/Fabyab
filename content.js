@@ -422,10 +422,10 @@ window.FABYAB_CONTENT = {
       "ئەو کەرتانەی خزمەتیان دەکەین"
     ],
     "smartEyebrow": [
-      "06 / أنظمة ذكية",
-      "06 / SMART SYSTEMS",
-      "06 / AKILLI SİSTEMLER",
-      "06 / سیستەمی زیرەک"
+      "05 / أنظمة ذكية",
+      "05 / SMART SYSTEMS",
+      "05 / AKILLI SİSTEMLER",
+      "05 / سیستەمی زیرەک"
     ],
     "smartTitle": [
       "الذكاء يصنع الفرق<br><em>وفابياب تقود التحوّل.</em>",
@@ -470,10 +470,10 @@ window.FABYAB_CONTENT = {
       "کوالێتی"
     ],
     "qcEyebrow": [
-      "07 / مراقبة الجودة",
-      "07 / QUALITY CONTROL",
-      "07 / KALİTE KONTROL",
-      "07 / چاودێریی کوالێتی"
+      "06 / مراقبة الجودة",
+      "06 / QUALITY CONTROL",
+      "06 / KALİTE KONTROL",
+      "06 / چاودێریی کوالێتی"
     ],
     "qcTitle": [
       "الثقة تُبنى<br><em>والجودة تُختبر.</em>",
@@ -518,10 +518,10 @@ window.FABYAB_CONTENT = {
       "وێنەیەکی ڕوونکەرەوەی تاقیکردنەوەی بەهێزیی کارتۆن"
     ],
     "coverageEyebrow": [
-      "08 / انتشارنا في العراق",
-      "08 / ACROSS IRAQ",
-      "08 / IRAK’IN HER YERİNDE",
-      "08 / لە سەرتاسەری عێراق"
+      "07 / انتشارنا في العراق",
+      "07 / ACROSS IRAQ",
+      "07 / IRAK’IN HER YERİNDE",
+      "07 / لە سەرتاسەری عێراق"
     ],
     "coverageTitle": [
       "نغلّف احتياجاتك<br><em>أينما كنت في العراق.</em>",
@@ -590,10 +590,10 @@ window.FABYAB_CONTENT = {
       "بەدواداچوونی بارەکان"
     ],
     "journeyEyebrow": [
-      "09 / من الفكرة إلى التغليف",
-      "09 / FROM VISION TO PACKAGING",
-      "09 / FİKİRDEN AMBALAJA",
-      "09 / لە بیرۆکەوە تا بەستەبەندی"
+      "08 / من الفكرة إلى التغليف",
+      "08 / FROM VISION TO PACKAGING",
+      "08 / FİKİRDEN AMBALAJA",
+      "08 / لە بیرۆکەوە تا بەستەبەندی"
     ],
     "journeyTitle": [
       "معك في<br><em>كل خطوة.</em>",
@@ -656,10 +656,10 @@ window.FABYAB_CONTENT = {
       "لە گەشتی بەستەبەندییەکەتدا لەگەڵتین تا دەگاتە شوێنی کارەکەت."
     ],
     "contactEyebrow": [
-      "10 / لنبدأ معًا",
-      "10 / LET’S BEGIN",
-      "10 / BİRLİKTE BAŞLAYALIM",
-      "10 / با پێکەوە دەست پێ بکەین"
+      "09 / لنبدأ معًا",
+      "09 / LET’S BEGIN",
+      "09 / BİRLİKTE BAŞLAYALIM",
+      "09 / با پێکەوە دەست پێ بکەین"
     ],
     "contactTitle": [
       "أطلق أمنيتك<br><em>ودعنا نغلّفها.</em>",

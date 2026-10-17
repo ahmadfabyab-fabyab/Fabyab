@@ -238,7 +238,7 @@ footer {position:relative;isolation:isolate;padding-top:65px}
 @media(max-width:380px) {
  .brand {width:148px}.nav-shell {width:calc(100% - 28px)}.nav-actions {gap:7px}.language-button {font-size:10px}.service-tab {font-size:9px;padding:12px 9px;gap:7px}.service-copy h3 {font-size:24px}.model-toolbar {font-size:9px}.film-play {font-size:11px}.industry-card strong {font-size:11px}.system-logo {width:65px}.logo-trojan {width:73px;height:90px}.quality-strength strong {font-size:12px}.quality-strength div>span {font-size:6px}.coverage-controls>span {width:50%}
 }
-@media(prefers-reduced-motion:reduce) {
+@media(prefers-reduced-motion:reduce) and (scripting:none) {
  html {scroll-behavior:auto}.marquee-track,.marquee:after,.slogan-star,.slogan-light,.service-model,.film-background,.play-disc:before,.play-disc:after,.client-sheet:after,.smart-core,.system-logo,.system-connections,.quality-moving,.quality-halo,.pressure-pulse,.pressure-line {animation:none!important}.quality-moving {translate:0 0}.reveal {opacity:1!important;transform:none!important}
 }
 /* Independent elephant mask; pressure animation never deforms the carton. */
