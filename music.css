@@ -1,0 +1,8 @@
+/* Self-contained music control; existing site styles and layout are untouched. */
+.music-toggle{position:fixed;z-index:90;inset-inline-end:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));display:inline-flex;align-items:center;justify-content:center;gap:8px;min-width:44px;min-height:44px;padding:10px 14px;border:1px solid #00aeef66;border-radius:999px;background:#0d1032ed;color:#fff;font:700 11px/1.5 Manrope,Arial,sans-serif;box-shadow:0 4px 18px #000b6633;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.music-toggle:lang(ar){font-family:Alexandria,Arial,sans-serif}.music-toggle:lang(ckb){font-family:'Rabar Sorani',Arial,sans-serif;font-synthesis:none}
+.music-toggle:hover{border-color:#00aeef}.music-toggle:focus-visible{outline:2px solid #d9a86d;outline-offset:4px}
+.music-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.music-toggle .music-waves{display:none}.music-toggle.is-playing .music-waves{display:block;color:#00aeef}.music-toggle.is-playing .music-mute{display:none}
+.music-status{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:760px){.music-toggle{inset-inline-end:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));padding:10px 12px;font-size:10px}}

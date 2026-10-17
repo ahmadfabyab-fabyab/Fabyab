@@ -254,7 +254,8 @@
     if(!iframe||!window.YT?.Player||filmPlayer)return;
     filmPlayer=new window.YT.Player(iframe,{events:{
       onReady:()=>setFilmStatus('filmLoaded'),
-      onError:()=>setFilmStatus('filmError',true)
+      onStateChange:event=>document.dispatchEvent(new CustomEvent('fabyab:film-state',{detail:{state:event.data}})),
+      onError:()=>{setFilmStatus('filmError',true);document.dispatchEvent(new CustomEvent('fabyab:film-state',{detail:{state:0}}));}
     }});
   }
   function loadFilmAPI() {
