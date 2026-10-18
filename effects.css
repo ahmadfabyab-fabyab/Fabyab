@@ -1,0 +1,65 @@
+/* October 18: scoped enhancements within Fabyab's approved palette. */
+.panorama-ready{position:relative!important;display:block!important;width:100%;height:600px;overflow:visible;touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none;isolation:isolate;direction:ltr;cursor:grab;margin:0 0 24px;outline:0}
+.panorama-ready.is-dragging{cursor:grabbing}.panorama-ready:focus-visible{outline:1px solid #00aeef88;outline-offset:4px;border-radius:18px}
+.panorama-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;-webkit-mask-image:none;mask-image:none}
+.panorama-camera,.panorama-ring,.panorama-card{width:0;height:0;transform-style:preserve-3d}
+.panorama-camera{position:relative}.panorama-ring{position:absolute;left:0;top:0}
+.panorama-ready .industry-card.panorama-card{position:absolute;left:0;top:0;display:block;width:0;height:0;min-height:0;min-width:0;padding:0;margin:0;border:0;background:none;box-shadow:none;overflow:visible;border-radius:0;transition:none;aspect-ratio:auto;pointer-events:auto}
+.panorama-ready .industry-card:before,.panorama-ready .industry-card:after{display:none}
+.panorama-ready .industry-card>.industry-picture,.panorama-ready .industry-card>strong,.panorama-ready .industry-card>.industry-number,.panorama-ready .industry-card>.industry-arrow{display:none}
+.panorama-tile{position:absolute;display:block;backface-visibility:hidden;-webkit-backface-visibility:hidden;outline:1px solid transparent}
+.panorama-frame{position:absolute;inset:0;display:block;width:100%;height:100%;overflow:hidden;background:transparent}
+.panorama-ready .panorama-frame img{position:absolute;display:block;max-width:none;object-fit:fill;pointer-events:none;filter:none;opacity:1;transform:none!important;user-select:none;-webkit-user-drag:none}
+.panorama-frame:after{content:'';position:absolute;inset:0;background:#0d1032;opacity:var(--panorama-depth,0);pointer-events:none}
+.panorama-card:focus-visible .panorama-frame{outline:2px solid #00aeef;outline-offset:-2px}
+.panorama-controls{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;align-items:center;gap:28px;min-height:82px;cursor:default;z-index:3;pointer-events:auto;padding:7px 0}
+.panorama-controls>div{min-width:220px;max-width:65%;text-align:center;display:grid;gap:8px}
+.panorama-name{font:700 clamp(21px,2.3vw,32px)/1.55 var(--font);color:#f3f6ff;letter-spacing:-.025em;direction:inherit}
+.panorama-count{font:700 11px/1.5 Manrope,Arial,sans-serif;letter-spacing:.16em;color:#00aeef}
+.panorama-controls button{display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;border:1px solid #00aeef66;border-radius:50%;background:#000b6633;color:#66d7ff;font-size:21px;transition:border-color .25s,background .25s}
+.panorama-controls button:hover{border-color:#00aeef;background:#0011e233}.panorama-controls button:focus-visible{outline:2px solid #d9a86d;outline-offset:3px}
+/* Edge-only glow: no grey sheen passes over the lettering. */
+@property --nova-angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+.nova-cta{position:relative;isolation:isolate;overflow:visible!important;color:#fff!important;background:linear-gradient(120deg,#0d1032,#000b66)!important;border:1px solid #00aeef66!important;box-shadow:0 5px 24px #0011e225;transition:transform .28s ease,box-shadow .28s ease!important}
+.nova-cta:before{content:'';position:absolute;inset:-2px;padding:2px;border-radius:inherit;background:conic-gradient(from var(--nova-angle),transparent 10%,#0011e255 38%,#00aeef 53%,#d9a86d99 59%,transparent 70%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:fabyabNova 7s linear infinite;pointer-events:none}
+.nova-cta:after{display:none!important}.nova-cta>span{position:relative;z-index:1;color:inherit!important}
+.nova-cta:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 7px 30px #00aeef27}.nova-cta:active{transform:translateY(0) scale(.99)}
+@keyframes fabyabNova{to{--nova-angle:360deg}}
+.thank-you-panel{position:relative;width:min(1180px,calc(100% - 64px));margin:30px auto 12px;padding:35px 0 30px;text-align:center;isolation:isolate}
+.thank-you-panel:before{content:'';position:absolute;left:20%;right:20%;top:0;height:1px;background:linear-gradient(90deg,transparent,#00aeef55,transparent)}
+.thank-you-panel img{display:block;width:100%;height:auto;max-height:260px;object-fit:contain}
+@media(max-width:1000px){.panorama-ready{height:540px}}
+@media(max-width:760px){.panorama-ready{height:470px;margin-bottom:15px}.panorama-controls{gap:13px;min-height:83px}.panorama-controls>div{min-width:0;width:65%;max-width:65%;gap:4px}.panorama-controls button{width:40px;height:40px}.panorama-name{font-size:21px;line-height:1.6}.panorama-count{font-size:10px}.fabyab-galaxy{inset:-3% -12%}.thank-you-panel{width:calc(100% - 30px);margin:25px auto 5px;padding:28px 0 22px}.nova-cta:hover{transform:none}}
+
+/* Statistic cards share the CTA surface and animated edge; content motion stays intact. */
+.stats-grid .stat{position:relative;isolation:isolate;overflow:visible!important;background:linear-gradient(120deg,#0d1032,#000b66)!important;border:1px solid #00aeef66!important;box-shadow:0 5px 24px #0011e225}
+.stats-grid .stat:before{content:'';position:absolute;inset:-2px;padding:2px;border-radius:inherit;background:conic-gradient(from var(--nova-angle),transparent 10%,#0011e255 38%,#00aeef 53%,#d9a86d99 59%,transparent 70%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:fabyabNova 7s linear infinite!important;pointer-events:none;z-index:0}
+.stats-grid .stat:after{display:none!important}
+.stats-grid .stat>*{position:relative;z-index:1}
+
+/* Shared glow on social and language controls, preserving their original dimensions. */
+.language-button.nova-cta,.footer-social-link.nova-cta{border-radius:999px}
+.language-button.nova-cta:before,.footer-social-link.nova-cta:before{display:block!important}
+.language-button.nova-cta svg,.footer-social-link.nova-cta svg{position:relative;z-index:1}
+/* Original Galaxy 3D scene: the page gradient remains visible through its canvas. */
+.galaxy-interlude{position:relative;width:100%;height:clamp(290px,36vw,530px);margin:-65px auto -60px;background:transparent;overflow:hidden;isolation:isolate;pointer-events:none}
+.galaxy-interlude canvas{display:block;width:100%;height:100%;background:transparent}
+.thank-you-panel{width:min(620px,calc(100% - 50px));padding-block:22px 18px;margin:20px auto 12px}
+.thank-you-panel img{max-height:150px}
+.thank-you-caption{display:block;margin-top:5px;font:500 13px/1.5 Manrope,Arial,sans-serif;letter-spacing:.2em;color:#e6edff;text-align:center}
+@media(max-width:760px){
+ .galaxy-interlude{height:320px;margin:-32px auto -25px}
+ .thank-you-panel{width:min(360px,calc(100% - 48px));padding-block:15px;margin-block:15px 8px}
+ .thank-you-caption{font-size:10px;letter-spacing:.15em}
+ #quote-form.quote-form{padding:20px 18px;border-radius:20px}
+ #quote-form .form-grid{gap:15px 12px}
+ #quote-form .form-grid label{font-size:12px;gap:6px}
+ #quote-form .field-shell{margin-top:4px}
+ #quote-form .form-grid :is(input,select){min-height:46px;height:46px;padding-block:8px;padding-inline-start:36px;padding-inline-end:10px;font-size:16px;border-radius:9px}
+ #quote-form .form-grid textarea{min-height:104px;padding-block:9px;padding-inline-start:36px;font-size:16px}
+ #quote-form .field-icon{width:18px;height:18px;inset-inline-start:11px;top:14px}
+ #quote-form .form-submit{min-height:46px;margin-top:19px;padding:10px 15px;font-size:12px;gap:12px}
+ #quote-form .form-submit svg{width:20px;height:20px}
+ #quote-form .form-note{font-size:10px;margin-top:12px;line-height:1.7}
+ html[dir=rtl] #quote-form .form-grid [dir=ltr]{padding-inline-start:10px;padding-inline-end:36px}
+}

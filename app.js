@@ -182,7 +182,7 @@
   }
   const clientMap={'frozen':'frozen-food','oil':'edible-oils'};
   function renderSectors() {
-    const container=$('sector-grid');container.replaceChildren();
+    const container=$('sector-grid');window.fabyabPanorama?.destroy();container.replaceChildren();
     data.sectors.forEach((sector,i)=>{
       const button=createButton('','industry-card','sector',i);button.setAttribute('aria-label',sector[lang][0]);button.style.setProperty('--industry-index',i);
       const image=document.createElement('img');image.src=asset(sector.image);image.alt='';image.width=sector.width;image.height=sector.height;image.loading='lazy';
@@ -191,6 +191,7 @@
       const arrow=document.createElement('span');arrow.className='industry-arrow';arrow.append(arrowIcon());arrow.setAttribute('aria-hidden','true');button.append(picture,num,name,arrow);container.append(button);
     });
     setSector(sectorIndex,false);renderClients();
+    if(window.FabyabPanorama)window.fabyabPanorama=new window.FabyabPanorama(container,{initialIndex:sectorIndex,onChange:index=>setSector(index,false)});
   }
   function setSector(index,animate=true) {
     sectorIndex=wrap(index,data.sectors.length);const sector=data.sectors[sectorIndex],copy=sector[lang];
