@@ -1,0 +1,11 @@
+Galaxy_3D original component supplied by the site owner:
+https://framer.com/m/Galaxy-3D-pLJO0S.js@BF20R3TAqRhQVdcnba5H
+https://framerusercontent.com/modules/iTEVw8jFal0Wbl2zdgXx/BF20R3TAqRhQVdcnba5H/Galaxy_3D.js
+Adapted from React/Framer to static HTML; original shaders and particle geometry preserved. Transparent background; animation lifecycle adjusted.
+
+Thank You vector artwork from the reference selected by the site owner:
+https://innovative-labeling-209965.framer.app/
+Original path shapes retained; replay animation adapted to CSS. FOR WATCHING is a separate caption.
+
+Three.js r160.1 MIT license: vendor/THREE-LICENSE.txt
+Panorama carousel based on the CircularCarousel code supplied by the site owner.
