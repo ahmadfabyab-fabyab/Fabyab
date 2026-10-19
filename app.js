@@ -147,6 +147,7 @@
   }
   function setModel(id,animate=true,restart=true) {
     const products=familyProducts(),selected=products.findIndex(x=>x.id===id);if(selected<0)return;
+    if(window.fabyabProductOrbit){window.fabyabProductOrbit.setItems(products.map(x=>({...x,label:x[lang][0]})),selected);labelModel(products[selected],selected,products);if(restart)syncModels();return;}
     window.clearTimeout(modelSwapTimer);modelGeneration++;
     stageSlots=['service-main-open','service-side-one','service-side-two'];positionStageSlots();
     stageSlots.forEach((button,i)=>placeModel(button,products[wrap(selected+i,products.length)],animate));
@@ -155,6 +156,7 @@
   }
   function chooseService(index) {setService(index);}
   function advanceModels() {
+    if(window.fabyabProductOrbit){window.fabyabProductOrbit.go(1);return;}
     const products=familyProducts(),oldMain=stageSlots[0],newMain=stageSlots[1],newLeft=stageSlots[2];
     const nextIndex=products.findIndex(x=>x.id===$(newMain).dataset.modelProduct);
     if(nextIndex<0)return;
@@ -174,6 +176,7 @@
     window.clearInterval(modelTimer);
     const stopped=paused||!modelVisible||document.hidden;
     $('service-panel').classList.toggle('models-paused',stopped);
+    window.fabyabProductOrbit?.setRunning(!stopped);
     if(stopped)return;
     modelTimer=window.setInterval(()=>{
       const focused=keyboardNavigation&&($('service-panel').contains(document.activeElement)||$('service-models').contains(document.activeElement));
@@ -213,7 +216,7 @@
     const img=document.createElement('img');img.width=2048;img.height=1488;img.loading='eager';img.decoding='async';button.append(img);article.append(button);wall.append(article);
     // Reserve the original card width and the tallest logo sheet to avoid layout jumps.
     const companion=document.createElement('aside');companion.className='client-companion';
-    companion.innerHTML='<div class="trust-orb" aria-hidden="true"><div class="trust-orb-core"></div><i class="trust-orb-ring ring-1"></i><i class="trust-orb-ring ring-2"></i><i class="trust-orb-ring ring-3"></i><img src="assets/brand/fabyab-official.webp" width="2048" height="415" alt=""></div><div class="client-companion-copy"><strong dir="ltr">1,200+</strong><p></p></div>';
+    companion.innerHTML='<div class="trust-orb"><div class="trust-orb-core"></div><i class="trust-orb-ring ring-1"></i><i class="trust-orb-ring ring-2"></i><i class="trust-orb-ring ring-3"></i><div class="client-companion-copy"><strong dir="ltr">1,200+</strong><p></p></div></div>';
     companion.querySelector('p').textContent=t('clients');wall.append(companion);
     renderClientCard(false);syncClients();
   }
@@ -336,6 +339,7 @@
     if($('fabyab-film-player'))$('fabyab-film-player').title=t('play')+' — '+videoNames[videoLanguage];
     if(dialogItem)renderDialog();
     if(lastRequest){lastRequest=buildRequest();$('request-preview').value=lastRequest.text;$('form-status').textContent=t('formReady');}
+    window.dispatchEvent(new CustomEvent('fabyab:languagechange',{detail:{lang}}));
   }
   function setLanguage(value) {
     value=normalizeLanguage(value);if(!languages.includes(value))return;
@@ -524,6 +528,7 @@
   document.addEventListener('visibilitychange',()=>{startHeroTimer();syncCoverage();syncModels();syncClients();if(document.hidden&&networkFrame){window.cancelAnimationFrame(networkFrame);networkFrame=0;}else startNetwork();});
   $('home').addEventListener('pointermove',event=>{if(paused||event.pointerType==='touch'||window.innerWidth<1000)return;document.documentElement.style.setProperty('--pointer-x',((event.clientX/window.innerWidth-.5)*18)+'px');document.documentElement.style.setProperty('--pointer-y',((event.clientY/window.innerHeight-.5)*12)+'px');});
   if(!['http:','https:'].includes(filmPage().protocol))filmStatusKey='filmLocal';
+  if(window.FabyabProductOrbit)window.fabyabProductOrbit=new window.FabyabProductOrbit(document.querySelector('.service-artboard'),{onChange:index=>{const products=familyProducts();if(products[index])labelModel(products[index],index,products);},onOpen:id=>openProduct(id),onInteract:()=>syncModels()});
   setupHeroGestures();applyLanguage();syncMotion();setupNetwork();installObservers();onScroll();
   if(document.fonts){document.fonts.ready.then(measureVision);document.fonts.addEventListener?.('loadingdone',measureVision);}
   $('year').textContent=String(new Date().getFullYear());

@@ -1,6 +1,9 @@
 'use strict';
 window.FABYAB_CONTENT = {
   "text": {
+    "employees": ["أكثر من ٦٠٠ موظف", "employees across our team", "ekibimizde 600’den fazla çalışan", "زیاتر لە ٦٠٠ کارمەند"],
+    "production247": ["إنتاج متواصل ٢٤ ساعة، ٧ أيام بالأسبوع", "Production 24 hours a day, 7 days a week", "Haftanın 7 günü, 24 saat üretim", "بەرهەمهێنان ٢٤ کاتژمێر، ٧ ڕۆژ لە هەفتەدا"],
+    "callUs": ["اتصل بنا", "Call us", "Bizi arayın", "پەیوەندیمان پێوە بکە"],
     "pageTitle": [
       "فابياب | الريادة في عالم التعبئة والتغليف",
       "FABYAB | Leader in the World of Packaging",

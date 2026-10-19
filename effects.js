@@ -40,9 +40,12 @@
       root.append(this.controls);root.classList.add('panorama-ready');root.tabIndex=0;root.setAttribute('aria-roledescription','carousel');
       this.measure();this.caption();
       const listen=(node,type,fn,options)=>{node.addEventListener(type,fn,options);this.listeners.push(()=>node.removeEventListener(type,fn,options));};
-      listen(root,'pointerdown',e=>this.down(e),{passive:true});listen(root,'pointermove',e=>this.move(e),{passive:true});
+      listen(root,'pointerdown',e=>this.down(e),{passive:true});listen(root,'pointermove',e=>this.move(e),{passive:false});
       listen(root,'pointerup',e=>this.release(e),{passive:true});listen(root,'pointercancel',e=>this.release(e,true),{passive:true});
-      listen(root,'lostpointercapture',e=>this.release(e,true),{passive:true});
+      // Safari implicitly captures a touch on the child card. Moving capture to
+      // the carousel emits a bubbling child lostpointercapture; it is not an end gesture.
+      listen(root,'lostpointercapture',e=>{if(e.target===root)this.release(e,true);},{passive:true});
+      listen(root,'dragstart',e=>e.preventDefault());
       listen(root,'click',e=>this.click(e),true);listen(root,'keydown',e=>this.key(e));
       listen(root,'wheel',e=>{if(Math.abs(e.deltaX)<=Math.abs(e.deltaY)||!e.deltaX)return;e.preventDefault();this.angle+=e.deltaX*180/(Math.PI*this.g.radius*this.g.fit);this.velocity=clamp(e.deltaX*1.2,-100,100);this.target=null;this.hold=performance.now()+350;this.wake();},{passive:false});
       listen(document,'visibilitychange',()=>{if(document.hidden)this.sleep();else this.wake();});
@@ -83,11 +86,12 @@
     }
     focusIndex(index){let target=-index*this.g.step;target+=360*Math.round((this.angle-target)/360);this.target=target;this.hold=performance.now()+2300;this.wake();}
     stepBy(delta){this.focusIndex(((this.active+delta)%this.count+this.count)%this.count);}
-    down(e){if(e.button!==0||e.target.closest('[data-panorama-nav]'))return;this.suppress=false;this.press={id:e.pointerId,x:e.clientX,y:e.clientY,angle:this.angle,samples:[]};}
+    down(e){if(e.isPrimary===false||e.button!==0||e.target.closest('[data-panorama-nav]'))return;this.suppress=false;this.press={id:e.pointerId,x:e.clientX,y:e.clientY,angle:this.angle,samples:[]};}
     move(e){
       const p=this.press;if(!p||p.id!==e.pointerId)return;
       const dx=e.clientX-p.x,dy=e.clientY-p.y;
       if(!this.drag){if(e.pointerType!=='mouse'&&Math.abs(dy)>7&&Math.abs(dy)>Math.abs(dx)*1.15){this.press=null;return;}if(Math.abs(dx)<7)return;this.drag=true;this.target=null;this.velocity=0;this.root.classList.add('is-dragging');try{this.root.setPointerCapture(e.pointerId);}catch{}}
+      if(e.cancelable)e.preventDefault();
       this.angle=p.angle-dx*180/(Math.PI*this.g.radius*this.g.fit);const now=performance.now();p.samples.push({time:now,angle:this.angle});while(p.samples.length>2&&now-p.samples[0].time>100)p.samples.shift();this.paint();
     }
     release(e,cancel=false){
